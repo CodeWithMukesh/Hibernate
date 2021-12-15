@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!--Database connection  -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhiberdb</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		
+		<!-- query jo bhi chl raha hai use show karega console me -->
+		<property name="show_sql">true</property>
+		
+		<!-- Table automatically create krane ke liye database me -->
+		<property name="hbm2ddl.auto">create</property>
+		
+		<!--mapping is very important to create table it is used to map the entity class  -->
+		<mapping class="com.mukesh.learn.HibernateProject.entities.Student" />
+		<mapping class="com.mukesh.learn.HibernateProject.entities.User"/>
+		<mapping class="com.mukesh.learn.HibernateProject.entities.Person"/>
+		<mapping class="com.mukesh.mapping.Question"/>
+		<mapping class="com.mukesh.mapping.Answer"/>
+		<mapping class="com.mukesh.map.many2many.Project"/>
+		<mapping class="com.mukesh.map.many2many.Employee"/>
+		<mapping class="com.mukesh.lazy_eager_loading.Candidate"/>
+		<mapping class="com.mukesh.lazy_eager_loading.Course" />
+		
+	</session-factory>
+</hibernate-configuration>
